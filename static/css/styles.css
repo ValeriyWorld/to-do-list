@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #407bdb
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto
+}
+
+.to-do-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  /* height: 600px;  */
+  /* height: 1000px; */
+  margin: 5% auto;
+  padding: 5% 0;
+}
+
+.to-do-add {
+  display: flex;
+  flex-direction: row;
+  border-style: solid;
+  border-width: 6px;
+  border-color: rgba(137, 178, 245, 0.3);
+  /* width: 70%; */
+  /* max-width: 80%; */
+}
+
+.to-do-input {
+  width: 380px;
+  /* width: 70%; */
+  height: 40px;
+  background: #fff;
+  border: none;
+  font-size: 18px;
+  padding: 0 10px;
+  /* margin: 0 6px 6px 0; */
+  /* box-shadow: 0px 0px 0px 6px rgba(137, 178, 245, 0.3) */
+}
+
+/* Remove outline on the forms and links */
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.add-task {
+  text-transform: uppercase;
+  border: none;
+  width: 80px;
+  /* width: 30%; */
+  background-color: #c2a2fa;
+  color: #fff;
+  /* height: 52px; */
+}
+
+.add-task:active {
+  background-color: #b387ff
+}
+
+.container-splitter {
+  height: 1px;
+  width: 50px;
+  background-color: #fff;
+  margin: 5% 0;
+}
+
+.to-do-tasks {
+  background-color: #fff;
+  width: 492px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+
+}
+
+.task-item {
+  height: 32px;
+  /* width: 492px; */
+  width: 90%;
+  background-color: #fff;
+  /* margin-bottom: 10px; */
+  /* border-style: solid;
+  border-width: 0 0 4px 0;
+  border-color: red; */
+}
+
+.item-splitter {
+  height: 1px;
+  width: 90%;
+  background-color: #bbbdbf;
+  margin: 10px 0;
+}
+
+.task-delete {
+  float: right;
+  background-color: #fff;
+  border-radius: 5px;
+  border-color: red;
+  padding-top: 5px;
+}
+
+.task-delete:active {
+  background-color: #faa2a2;
+}
+
+.task-delete > svg {
+  color: red;
+}
+
+.checkbox {
+  margin: 10px 10px 10px 0;
+}
