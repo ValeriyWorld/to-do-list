@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_script import Manager, Shell
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
@@ -31,19 +31,26 @@ class Task(db.Model):
     def __repr__(self):
         return '< Content: {}>'.format(self.content)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    if request.method == 'POST':
-        new_task = request.form.get('add_task')
-
-        if new_task:
-            new_task_obj = Task(content=new_task)
-            db.session.add(new_task_obj)
-            db.session.commit()
-
     tasks = Task.query.all()
     return render_template('index.html', tasks=tasks)
 
+@app.route('/add', methods=['POST'])
+def add():
+    new_task = request.form.get('add_task')
+    if new_task:
+        new_task_obj = Task(content=new_task)
+        db.session.add(new_task_obj)
+        db.session.commit()
+    return redirect(url_for('index'))
+
+@app.route('/delete/<id>')
+def delete(id):
+    del_task = Task.query.get(id)
+    db.session.delete(del_task)
+    db.session.commit()
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     manager.run()

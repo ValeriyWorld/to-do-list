@@ -91,6 +91,14 @@ body {
   border-color: red; */
 }
 
+.todo-text {
+
+}
+
+.linethrough {
+  text-decoration: line-through;
+}
+
 .item-splitter {
   height: 1px;
   width: 90%;
